@@ -1,0 +1,15 @@
+textarea {
+	color: var(--placeholder);
+	border: none;
+	border-radius: 0.8rem;
+	background-color: var(--bg-900);
+	height: 9.6rem;
+	resize: none;
+	&::placeholder {
+		color: var(--placeholder);
+	}
+	&:focus {
+		outline: none;
+		border: 1px solid var(--green-300);
+	}
+}
