@@ -1,27 +1,49 @@
+import { format, formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale/pt-BR';
+import styles from './Post.module.css';
+
 import { Avatar } from '../avatar/Avatar';
 import { Comment } from '../comment/Comment';
 import { Textarea } from '../textarea/Textarea';
-import styles from './Post.module.css';
-export function Post() {
+import { useState } from 'react';
+
+export function Post({ author, publishedAt, content }) {
+	const [comments, setComments] = useState([1, 2]);
+	format(publishedAt, "dd 'de' MMMM 'as' HH:mm", {
+		locale: ptBR,
+	});
+
+	const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+		locale: ptBR,
+		addSuffix: true,
+	});
+	const handleCreateNewComment = (e) => {
+		e.preventDefault();
+		setComments([...comments, 3]);
+		console.log(comments);
+	};
 	return (
 		<article className={styles.post}>
 			<header>
 				<div className={styles.author}>
-					<Avatar src={'https://github.com/ismaelp96.png'} />
+					<Avatar src={author.avatarUrl} />
 					<div className={styles.authorInfo}>
-						<strong>Ismael Conceição</strong>
-						<span>Web Developer</span>
+						<strong>{author.name}</strong>
+						<span>{author.role}</span>
 					</div>
 				</div>
-				<time title='27 de abril às 22:23' dateTime='2025-04-27 22:23:30'>
-					Publicado há 1h
+				<time
+					title={publishedDateRelativeToNow}
+					dateTime={publishedAt.toISOString()}>
+					{publishedDateRelativeToNow}
 				</time>
 			</header>
 			<div className={styles.content}>
-				<p>Fala galeraa </p>
-				<p> Acabei de subir mais um projeto no meu portifolio</p>
+				{content.map((item, i) => {
+					return <p key={i}>{item.content}</p>;
+				})}
 			</div>
-			<form className={styles.comments}>
+			<form onSubmit={handleCreateNewComment} className={styles.comments}>
 				<h4>Deixe seu Feedback</h4>
 				<Textarea />
 				<div className={styles.footer}>
@@ -31,7 +53,9 @@ export function Post() {
 				</div>
 			</form>
 			<div className={styles.commentsList}>
-				<Comment />
+				{comments.map((comment, i) => {
+					return <Comment key={i} />;
+				})}
 			</div>
 		</article>
 	);

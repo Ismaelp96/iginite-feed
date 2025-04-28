@@ -12,7 +12,7 @@ export function Comment() {
 						<h5>
 							Ismael Conceição <span>(você)</span>
 						</h5>
-						<time datetime='2025-04-28 09:13:30' title='28 de abril às 09:13'>
+						<time dateTime='2025-04-28 09:13:30' title='28 de abril às 09:13'>
 							Cerca de 2h
 						</time>
 						<p>Muito bom! 😉</p>

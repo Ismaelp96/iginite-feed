@@ -28,7 +28,6 @@ header time {
 
 .authorInfo strong {
 	color: var(--gray-100);
-	margin-top: 1.6rem;
 }
 
 .authorInfo span {
