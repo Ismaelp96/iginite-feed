@@ -14,3 +14,9 @@
 		grid-template-columns: 1fr;
 	}
 }
+
+.wrapper main {
+	display: flex;
+	flex-direction: column;
+	gap: 3.2rem;
+}

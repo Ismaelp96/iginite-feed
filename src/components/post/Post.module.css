@@ -39,6 +39,14 @@ header time {
 	padding-block: 2.4rem;
 	border-bottom: 1px solid var(--gray-600);
 }
+
+.content a {
+	color: var(--green-500);
+	transition: color 0.2s ease;
+	&:hover {
+		color: var(--green-300);
+	}
+}
 .comments {
 	padding-top: 2.4rem;
 	display: flex;
