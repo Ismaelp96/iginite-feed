@@ -65,16 +65,22 @@
 	}
 }
 
-.commentActions {
+.commentAction {
 	display: flex;
 	align-items: center;
 	gap: 0.6rem;
 	padding-left: 6.6rem;
 }
 
-.commentActions svg {
+.commentAction button {
+	line-height: 0;
+}
+
+.commentAction button svg {
 	cursor: pointer;
 	transition: all 0.2s ease;
+	color: var(--gray-100);
+
 	&:hover {
 		color: var(--green-500);
 	}
