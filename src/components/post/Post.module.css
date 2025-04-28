@@ -58,23 +58,26 @@ header time {
 }
 
 .comments .footer {
-	visibility: none;
-	pointer-events: none;
-	opacity: 0;
+	visibility: hidden;
 	max-height: 0;
+	opacity: 0;
 }
 
 .comments:focus-within .footer {
 	visibility: visible;
-	pointer-events: all;
-	opacity: 1;
 	max-height: none;
-	margin-top: 1.6rem;
+	opacity: 1;
 }
 
 .comments .footer button {
 	width: 100%;
 	max-width: 10.8rem;
+	margin-top: 1.6rem;
+}
+
+.comments .footer button:disabled {
+	cursor: not-allowed;
+	background-color: var(--gray-600);
 }
 
 .commentsList {

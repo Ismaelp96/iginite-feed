@@ -1,5 +1,5 @@
 import styles from './Textarea.module.css';
-export function Textarea({ name, onChange, value }) {
+export function Textarea({ name, onChange, value, onInvalid }) {
 	return (
 		<textarea
 			type='text'
@@ -8,6 +8,8 @@ export function Textarea({ name, onChange, value }) {
 			className={styles.textarea}
 			value={value}
 			onChange={onChange}
+			onInvalid={onInvalid}
+			required
 		/>
 	);
 }
