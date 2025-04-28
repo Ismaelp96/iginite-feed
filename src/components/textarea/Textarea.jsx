@@ -1,12 +1,10 @@
-import './Textarea.css';
-const Input = () => {
+import styles from './Textarea.module.css';
+export function Textarea() {
 	return (
 		<textarea
 			type='text'
-			placeholder='Adicione uma nova tarefa'
-			className='fs-16'
+			placeholder='Escreva um comentário...'
+			className={styles.textarea}
 		/>
 	);
-};
-
-export default Input;
+}

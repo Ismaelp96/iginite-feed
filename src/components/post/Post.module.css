@@ -1,0 +1,55 @@
+.post {
+	background-color: var(--gray-800);
+	padding: 4rem;
+	border-radius: 8px;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.author {
+	display: flex;
+	align-items: center;
+	gap: 1.6rem;
+}
+
+.avatar {
+	border: 4px solid var(--gray-800);
+	border-radius: 0.8rem;
+	width: 100%;
+	max-width: 7.2rem;
+	height: 7.2rem;
+	outline: 2px solid var(--green-500);
+}
+
+.authorInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.authorInfo strong {
+	color: var(--gray-100);
+	margin-top: 1.6rem;
+}
+
+.authorInfo span {
+	color: var(--gray-400);
+	font-size: 1.4rem;
+}
+
+.content {
+	padding-block: 2.4rem;
+	border-bottom: 1px solid var(--gray-600);
+}
+.comments {
+	padding-top: 2.4rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.comments h4 {
+	margin-bottom: 1.6rem;
+}
